@@ -1,0 +1,85 @@
+<aura:component controller="BoatSearchResults" implements="force:appHostable,flexipage:availableForAllPageTypes"   >
+   <aura:registerEvent name="launchNewBoatForm" type="c:launchNewBoatForm"/>
+
+    <!-- Handle component init in a client-side controller -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="launchNewBoatForm" event="c:launchNewBoatForm" action="{!c.handleNewBoatForm}"/>
+    
+    <aura:handler name="formsubmit"   event="c:formsubmit"  action="{!c.onFormSubmit}"  phase="capture"/>
+
+    <!-- dynamically load the BoatTypes -->
+    <aura:attribute name="BoatTypes" type="BoatType__c[]" />
+    <aura:attribute name="selectedType" type="String" default="foo"/>
+    <aura:attribute name="renderNew" type="Boolean" default="true"/>
+ 
+				<lightning:layout horizontalAlign="center-aligned"> 
+                    <lightning:layoutItem padding="horizontal-medium" >
+                        <!-- Create a dropdown menu with options -->
+                        <lightning:select aura:id="boatTypes" variant="label-hidden" name="selectType"
+                                          onchange="{!c.handleChange}">
+                            <option value="">All Types</option>
+                            <aura:iteration items="{!v.BoatTypes}" var="boatType">
+                                <option value="{!boatType.Id}" text="{!boatType.Name}"/>
+                            </aura:iteration>
+                        </lightning:select>
+
+                    </lightning:layoutItem>
+
+
+                    <lightning:layoutItem >
+                             <lightning:button class="slds-button" variant="brand" label="Search" onclick="{!c.onFormSubmit}"/>
+
+            <!--
+            The form’s controller checks whether the event.force:createRecord event
+            is supported by a standalone app and either shows or hides the New button
+            according to best practices.
+            -->
+
+                            <aura:if isTrue="{!v.renderNew}">
+                                <lightning:button class="slds-button" variant="neutral" label="New" onclick="{!c.newBoat}"/>
+                            </aura:if>
+                     </lightning:layoutItem>
+                </lightning:layout>
+             
+    
+    
+    
+    
+    
+    <!--
+    <aura:attribute name="BoatType" type="String[]" />
+    <aura:attribute name="selectedBoatType" type="String"  />
+    <aura:attribute name="displayNew" type="Boolean"   />
+
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+         <lightning:layout horizontalAlign="center-aligned">            
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                <lightning:select variant="label-hidden" name="BoatTypePicklist" aura:id="BoatTypePicklist" onchange="{!c.setBoatType}"  >
+                    <option value="">All Types</option>
+                    <aura:iteration items="{!v.BoatType}" var="type">
+                        <option value="{!type}" text="{!type}"></option>
+                    </aura:iteration>
+                </lightning:select>
+            </lightning:layoutItem>
+            
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                <lightning:button label="Search"  
+                       variant="brand"
+                        onclick="{!c.searchItems}"
+                  		/>
+            </lightning:layoutItem>
+             
+           <aura:if isTrue="{!v.displayNew}">  
+             	<lightning:layoutItem flexibility="auto" padding="around-small">
+                    <lightning:button label="New"  
+                           variant="neutral"
+                            onclick="{!c.newItem}"
+                            />
+                </lightning:layoutItem>
+            </aura:if>  
+            
+           
+        </lightning:layout>
+   -->  
+</aura:component>

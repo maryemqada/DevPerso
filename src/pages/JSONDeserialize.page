@@ -1,0 +1,33 @@
+<apex:page controller="JSONDeserialize">
+    <apex:form >
+        <apex:pageBlock title="JSON Deserialize Response">
+            <apex:pageBlockButtons >
+                <apex:commandButton value="submit" action="{!deserialize}" reRender="invoiceBlock"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection id="invoiceBlock" columns="1">
+                <apex:repeat value="{!wrapper.invoiceList}" var="invoice">
+                    <apex:pageBlockSection columns="2">
+                        <apex:facet name="header">Invoice {!invoice.invoiceNumber}</apex:facet>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Total Price" for="totalPrice" />
+                            <apex:outputText value="{!invoice.totalPrice}" id="totalPrice" />
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Statement Date" for="statementDate" />
+                            <apex:outputText value="{!invoice.statementDate}" id="statementDate" />
+                        </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection columns="1">
+                        <apex:facet name="header">Invoice {!invoice.invoiceNumber} Items</apex:facet>
+                        <apex:pageBlockTable value="{!invoice.lineItems}" var="item" id="lineItems">
+                            <apex:column value="{!item.productName}" headerValue="Product Name" />
+                            <apex:column value="{!item.quantity}" headerValue="Quantity" />
+                            <apex:column value="{!item.unitPrice}" headerValue="Unit Price" />
+                            <apex:column value="{!item.lineItemTotal}" headerValue="Total" />
+                        </apex:pageBlockTable>
+                    </apex:pageBlockSection>
+                </apex:repeat>
+            </apex:pageBlockSection>
+        </apex:pageBlock> 
+    </apex:form>
+</apex:page>

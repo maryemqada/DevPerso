@@ -1,0 +1,43 @@
+<aura:component controller="LC01_coutDeTransport" implements="flexipage:availableForAllPageTypes"
+                access="global" >
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="cost" type="integer" default="0" />
+    <aura:attribute name="mapCosts" type="Map" />
+    <aura:attribute name="oppty" type="Object"/>
+
+    <force:recordData recordId="{!v.recordId}" 
+                      fields="depart_livraison__c,destination_livraison__c"
+                      targetFields="{!v.property}" 
+                      layoutType="FULL"
+                      targetRecord="{!v.oppty}"
+                      recordUpdated="{!c.recordUpdated}"/>
+    
+    <div class="slds-page-header">
+        <h3 style="font-weight:bold;font-size:1.5em;">Calcul du coût de transport </h3>
+	<center>Départ livraison</center>
+        
+    <ui:inputSelect class="single" aura:id="InputSelectSingle1" change="{!c.onSingleSelectChange}">
+            <ui:inputSelectOption text="Paris" value="true"/>
+            <ui:inputSelectOption text="Marseille"/>
+            <ui:inputSelectOption text="Lyon"/>         	
+    </ui:inputSelect>
+    
+    <center>Destination livraison</center>
+    <ui:inputSelect class="single" aura:id="InputSelectSingle2" change="{!c.onSingleSelectChange}">
+            <ui:inputSelectOption text="Paris" value="true"/>
+            <ui:inputSelectOption text="Marseille"/>
+            <ui:inputSelectOption text="Lyon"/>         	
+    </ui:inputSelect>    
+
+  <center>  
+      Coût de transport 
+    <b><ui:outputNumber value="{!v.cost}" format="."/></b>
+  </center>
+  <br/>
+  <lightning:button variant="brand" label="Save" onclick="{!c.init }" />
+
+  </div>
+
+</aura:component>

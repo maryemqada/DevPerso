@@ -1,0 +1,20 @@
+.THIS {
+    
+    text-align: center;
+}
+
+.THIS .result {
+    font-weight: 300;
+    font-size: 20px;
+    display: block;
+    color: #0288D1;
+    
+}
+
+.THIS .input {
+	margin:16px;
+	text-align:left;
+}
+.THIS div{
+    border : 1px;
+}

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Ce paramètre sert à stocker le coût de transport</description>
+    <fields>
+        <fullName>CoutDeTransport__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Coût de transport</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DepartLivraison__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Départ Livraison</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Paris</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Lyon</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Marseille</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Nantes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Lille</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DestinationLivraison__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Destination  Livraison</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Paris</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Lyon</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Marseille</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Nantes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Lille</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Coût de transport</label>
+    <pluralLabel>Coûts de transport</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>
