@@ -1,4 +1,11 @@
-({
+({	
+	onBoatSelect : function(component, event, helper) {
+    //alert("event fired!!");
+    	var boatId = event.getParam("boatId");
+    	 //alert(boatId);
+        console.log(boatId);
+        component.set("v.selectedBoatId",boatId);
+    },
 	doSearch  : function(component, event, helper) {
     	helper.onSearch(component);
     },
@@ -8,12 +15,6 @@
         component.set("v.boatTypeId", params.boatTypeId);
         helper.onSearch(component);
          return "search complete.";
-    },
-    onBoatSelect : function(component, event, helper) {
-    //alert("event fired!!");
-    	var boatId = event.getParam("boatId");
-    	 //alert(boatId);
-        console.log(boatId);
-        component.set("v.selectedBoatId",boatId);
     }
+    
 })
