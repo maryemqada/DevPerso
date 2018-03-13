@@ -23,3 +23,7 @@
     background-color: rgba(0, 0, 0, .4);
     padding: 6px 8px;
 }
+
+.THIS.selected {
+    border: 3px solid rgb(0, 112, 210);
+}

@@ -1,14 +1,20 @@
 <aura:component controller="BoatSearchResults" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
     <aura:attribute name="boats" type="Boat__c[]"/> 
-    <aura:attribute name="selectedBoatID" type="string"/> 
+    <aura:attribute name="selectedType" type="string"/> 
     <aura:attribute name="boatTypeId" type="string"/> 
+    
+    <aura:attribute name="selectedBoatId" type="string"/>
     <!-- set up the aura:method for search -->
     <aura:method name="search" description="accepts boatTypeId
             and executes search that refreshes the boats attribute">
-        <aura:attribute name="boatTypeId" type="Id"/>
+        <aura:attribute name="boatTypeId" type="String"/>
     </aura:method>
     
-    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doSearch}"/>
+    
+    <aura:handler name="BoatSelect" event="c.BoatSelect" action="{!c.onBoatSelect}" />
+    
+    
     <div>
     <lightning:layout multipleRows="true">
 
@@ -16,7 +22,7 @@
 
             <aura:iteration items="{!v.boats}" var="bot">
                 <lightning:layoutItem flexibility="auto" padding="around-small">
-                	<c:BoatTile boat="{!bot}" />
+                	<c:BoatTile boat="{!bot}" selected="{!v.selectedBoatId == bot.Id ? true : false}" />
                 </lightning:layoutItem>
              </aura:iteration>
 

@@ -5,8 +5,9 @@
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
     <aura:handler name="launchNewBoatForm" event="c:launchNewBoatForm" action="{!c.handleNewBoatForm}"/>
     
-    <aura:handler name="formsubmit"   event="c:formsubmit"  action="{!c.onFormSubmit}"  phase="capture"/>
-
+   <!-- <aura:handler name="formsubmit"   event="c:formsubmit"  action="{!c.onFormSubmit}"  phase="capture"/>-->
+	<aura:registerEvent name="formsubmit" type="c:formsubmit"/>
+	
     <!-- dynamically load the BoatTypes -->
     <aura:attribute name="BoatTypes" type="BoatType__c[]" />
     <aura:attribute name="selectedType" type="String" default="foo"/>

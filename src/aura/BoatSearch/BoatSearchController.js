@@ -4,6 +4,7 @@
         var formData = event.getParam("formData");
         var boatTypeId = formData.boatTypeId;
         var BSRcmp = component.find("BSRcmp");
+        alert('boatsearch onformsubmit'+boatTypeId);
         var auraMethodResult = BSRcmp.search(boatTypeId);
         console.log("auraMethodResult: " + auraMethodResult);
     }

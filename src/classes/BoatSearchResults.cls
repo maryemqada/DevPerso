@@ -33,7 +33,7 @@ public class BoatSearchResults {
       if(boatTypeId != '' && boatTypeId != null)  {
              return [SELECT id, BoatType__c, picture__c, name,contact__r.Name
                     FROM Boat__c
-                    WHERE BoatType__c =:boatTypeId];
+                    WHERE BoatType__c ='a0F0O000017niK6UAI'];
       } else {
           return [SELECT id, BoatType__c, picture__c, name,contact__r.Name
                     FROM Boat__c];

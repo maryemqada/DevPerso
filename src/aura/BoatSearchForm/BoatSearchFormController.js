@@ -62,7 +62,7 @@
 
     search : function(component, event, helper){
         var selectedType = component.get("v.selectedType");
-        console.log("Search button pressed " + selectedType)
+        alert("Search button pressed " + selectedType)
     },
 
     newBoat : function(component, event, helper){

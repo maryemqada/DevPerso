@@ -1,9 +1,9 @@
 ({
 	onSearch : function(component, event) {
-		var boatTypeID = component.get('v.selectedBoatID');
-        //alert(boatTypeID);
+		var boatTypeID = component.get('v.boatTypeId');
+        //alert('boat searchresult onsearch '+boatTypeID);
         if(boatTypeID == undefined ) boatTypeID = '';
-        //alert(boatTypeID);
+       // alert(boatTypeID);
         
 		var action = component.get("c.getBoats");
 		 action.setParams({
@@ -15,7 +15,8 @@
             var state = response.getState();
             if (state === "SUCCESS"){
                 component.set("v.boats", response.getReturnValue());
-               // alert(response.getReturnValue());
+                console.log(response.getReturnValue());
+                
                 }
                 else {
                 console.log("Failed with state: " + state);
