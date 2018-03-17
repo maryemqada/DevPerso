@@ -136,6 +136,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>BoatReviews</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>BoatSearchResults</apexClass>
         <enabled>true</enabled>
     </classAccesses>

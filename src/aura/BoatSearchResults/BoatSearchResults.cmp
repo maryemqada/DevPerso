@@ -1,37 +1,35 @@
-<aura:component controller="BoatSearchResults" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
-    <aura:attribute name="boats" type="Boat__c[]"/> 
-    <aura:attribute name="selectedType" type="string"/> 
-    <aura:attribute name="boatTypeId" type="string"/> 
+<aura:component access="global" controller="BoatSearchResults" 
+                implements="force:appHostable,flexipage:availableForAllPageTypes" >
+
+    <aura:handler name="init" value="{!this}" action="{!c.onSearch}"/>
+	<aura:handler name="BoatSelect" event="c:BoatSelect" action="{!c.onBoatSelect}" />
     
-    <aura:attribute name="selectedBoatId" type="string"/>
-    <!-- set up the aura:method for search -->
+    <aura:attribute name="boats" type="Boat__c[]"/>
+    <aura:attribute name="boatTypeId" type="String" default=""/>
+    <aura:attribute name="errorMessage" type="String" />
+    <aura:attribute name="selectedBoatId" type="Id" />
+<!-- set up the aura:method for search -->
     <aura:method name="search" description="accepts boatTypeId
             and executes search that refreshes the boats attribute">
-        <aura:attribute name="boatTypeId" type="String"/>
+        <aura:attribute name="boatTypeId" type="Id"/>
     </aura:method>
-    
-    <aura:handler name="init" value="{!this}" action="{!c.doSearch}"/>
-    
-    <aura:handler name="BoatSelect"  event="c.BoatSelect" action="{!c.onBoatSelect}" />
-    
-    
-    <div>
-    <lightning:layout multipleRows="true">
+    <!-- Display Lightning Data Service errors, if any -->   
 
-            <aura:if isTrue="{!v.boats.length > 0}">
-
-            <aura:iteration items="{!v.boats}" var="boat">
-                <lightning:layoutItem flexibility="auto" padding="around-small">
-                	<c:BoatTile boat="{!boat}" selected="{!v.selectedBoatId == boat.Id ? true : false}" />
-                </lightning:layoutItem>
-             </aura:iteration>
-
-            <aura:set attribute="else">
-                <div class="slds-align_absolute-center">
-                    No boats found
-                </div>
-            </aura:set>
-        </aura:if> 
-    </lightning:layout>
+    <lightning:layout horizontalAlign="space" multipleRows="true">
+<aura:if isTrue="{!v.errorMessage}">
+    <div class="slds-align_absolute-center">
+        No boats found
     </div>
+</aura:if>
+
+     
+			<lightning:layout horizontalAlign="spread" multipleRows="true">
+				<aura:iteration var="boat" items="{!v.boats}">
+            		<lightning:layoutitem >
+                		<c:BoatTile boat="{!boat}" selected="{! boat.Id == v.selectedBoatId ? true : false }"/>
+            		</lightning:layoutitem>
+        		</aura:iteration>
+    		</lightning:layout>
+  
+    </lightning:layout>
 </aura:component>

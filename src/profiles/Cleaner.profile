@@ -136,6 +136,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>BoatReviews</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>BoatSearchResults</apexClass>
         <enabled>false</enabled>
     </classAccesses>
