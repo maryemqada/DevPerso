@@ -26,8 +26,8 @@
         </lightning:layoutItem>
         
         <lightning:layoutItem size="12" padding="around-small">
-            <label class="slds-form-element__label" for="input-id-01">Rating</label>
-           <!--  <c:FiveStarRating value="{!v.boatReview.Rating__c}" readonly="false"/> -->
+            <label class="slds-form-element__label" for="input-id-01">Rating</label> 
+            <c:FiveStarRating value="{!v.boatReview.Rating__c}" readonly="false"/> 
         </lightning:layoutItem>
         
         
