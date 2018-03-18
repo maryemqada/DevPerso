@@ -14,7 +14,7 @@
         });        
         BoatSelectedEvt.fire();
         
-       /* var plotMapMarker = $A.get('e.c:PlotMapMarker');
+       var plotMapMarker = $A.get('e.c:PlotMapMarker');
         plotMapMarker.setParams({
             "sObjectId":boat.Id,
             "lat" : "",
@@ -22,7 +22,7 @@
             "label":""
             
         });   
-        plotMapMarker.fire();*/
+        plotMapMarker.fire();
         
 	}
 })

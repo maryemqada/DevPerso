@@ -5,6 +5,9 @@
     <aura:attribute name="location" type="SObject"/>
     <aura:attribute name="jsLoaded" type="boolean" default="false"/>
     
+    <aura:handler event="c:PlotMapMarker" action="{!c.onPlotMapMarker}"/>
+    
+    
     <ltng:require styles="{!$Resource.Leaflet + '/leaflet.css'}" 
                   scripts="{!$Resource.Leaflet + '/leaflet-src.js'}"
                   afterScriptsLoaded="{!c.jsLoaded}" /> 
