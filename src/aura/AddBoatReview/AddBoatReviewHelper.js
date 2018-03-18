@@ -1,5 +1,6 @@
 ({
     onInit : function(component,event) {
+    console.log('oooooooooon');
         component.find("service").getNewRecord(
             "BoatReview__c", // sObject type (entityAPIName)
             null,      // recordTypeId
@@ -14,6 +15,7 @@
                 else {
                     component.set("v.boatReviewRecord.Boat__c",boat.Id);
                     component.set("v.boatReview.Boat__c",boat.Id);
+                   console.log('--- AddBoatReview->OnInit Helper : boatID '+  component.get("v.boatReviewRecord.Boat__c") +'-'+ component.get("v.boatReview.Boat__c"));
                 }
             })
         );

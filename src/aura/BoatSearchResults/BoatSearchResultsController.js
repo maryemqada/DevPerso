@@ -14,6 +14,6 @@
     
     onBoatSelect: function(component, event, helper){
         var params = event.getParam();
-        component.set("v.selectedBoatId", params.boatId);
+        //component.set("v.selectedBoatId", params.boatId);
     }
 })

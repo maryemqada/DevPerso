@@ -2,7 +2,7 @@
     doInit : function(component, event, helper) {
         helper.onInit(component,event);
     },
-    onSave : function(component, event, helper) {
+    onSave : function(component, event, helper) {alert('-----');
         component.set("v.boatReview.Boat__c",component.get("v.boat.Id"));
         component.find("service").saveRecord(function(saveResult){
             if(saveResult.state==="SUCCESS" || saveResult.state === "DRAFT")
@@ -34,9 +34,11 @@
             {
                 console.log('Unknown problem, state: ' + saveResult.state + ', error: ' + JSON.stringify(saveResult.error));
             }
-            var boatReviewAddedEvnt=component.getEvent("boatReviewAdded");
-                boatReviewAddedEvnt.fire();
-                 helper.onInit(component,event,helper);
+           
+             helper.onInit(component,event,helper);
+             
+             var boatReviewAddedEvnt=component.getEvent("BoatReviewAdded");
+             boatReviewAddedEvnt.fire();
            
         });
        

@@ -17,7 +17,7 @@
     },
     onRecordUpdated : function(component, event, helper){
         var boat = component.get("v.boat");
-        console.log("onRecordUpdated called | boat: " + boat.Id);
+        //console.log("onRecordUpdated called | boat: " + boat.Id);
 
         //invoke a refresh on the reviews tab, calling public method refresh
         var BoatReviews = component.find("BoatReviews");
@@ -27,14 +27,13 @@
         }
     },
 
-   /* Earlier dated on 8 Jan2018
-    *  onBoatReviewAdded : function(component, event, helper) {
-	console.log('Event received');
-	component.find("details").set("v.selectedTabId", "boatreviewtab");
-}*/
+    onBoatReviewAdded : function(component, event, helper) {
+	console.log('---BoatDetails-> onBoatReviewAdded-> Event received');
+	component.find("details").set("v.selTabId", "boatreviewtab");
+}
     
     
-    onBoatReviewAdded : function(component, event, helper){
+ /*   onBoatReviewAdded : function(component, event, helper){
         console.log("BDCjs: onBoatReviewAdded")
         component.find("tabs").set("v.selectedTabId", "boatreviewtab");
 
@@ -43,8 +42,8 @@
         //BRcmp is the aura:id for the component when invoked in BoatDetails.cmp
         BoatReviews.refresh();
 
-    },
-    
+    }
+    */
     
     
     
