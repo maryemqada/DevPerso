@@ -156,28 +156,54 @@ public without sharing class TestDataFactory {
      * @name SetupTestData
      * @description Inserts accounts, contacts, Products, PricebookEntries, Orders, and OrderItems.
     **/
-    public static void InsertTestData(Integer cnt){
+     /**
+     * @name SetupTestData
+     * @description Inserts accounts, contacts, Products, PricebookEntries, Orders, and OrderItems.
+    **/
+    public static Map<String, List<Object>> InsertTestData(Integer cnt){
         //ToDo: Ensure this method calls each of the construct methods
         //  and inserts the results for use as test data.
-        CollaborationGroup cg = constructCollaborationGroup();
-        insert cg;
-        list<Account> accounts = ConstructAccounts(cnt);
-        Insert accounts;
+    
+       CollaborationGroup colG=ConstructCollaborationGroup();
+        insert colG;
         
-        list<Contact> contacts = ConstructContacts(cnt, accounts);
-        insert contacts;
+       List<Account> a=ConstructAccounts(cnt);
+        insert a;
         
-        list<Product2> prods= ConstructProducts(cnt);
-        insert prods;
+       List<Contact> c=ConstructContacts(cnt, a);
+        insert c;
         
-        list<PriceBookEntry> entries = ConstructPricebookEntries(prods);
-        insert entries;
+       List<Product2> p= ConstructProducts(cnt);
+        insert p;
         
-        list<Order> orders = ConstructOrders(cnt, accounts);
-        insert orders;
+        List<PriceBookEntry> pbe=ConstructPricebookEntries(p);
+        insert pbe;
+       
+        List<Order> o=ConstructOrders(cnt, a);
+        insert o;
+       
+       
+       List<OrderItem> oi=ConstructOrderItems(cnt, pbe, o);
+        insert oi;
         
-        list<OrderItem> ordItems = ConstructOrderItems(cnt, entries, orders);
-        insert ordItems;     
+        Map<String, List<Object>> returnMap = new Map<String, List<Object>>();
+        returnMap.put('accounts', a);
+        returnMap.put('contacts', c);
+        returnMap.put('products', p);
+        returnMap.put('pricebookentries', pbe);
+        returnMap.put('orders', o);
+        returnMap.put('orderitems', oi);
+        
+        return returnMap;
     }
 
+	public static void VerifyQuantityOrdered(Product2 originalProduct, Product2 updatedProduct, Integer qtyOrdered)
+    {
+        //System.assertNotEquals(updatedProduct.Quantity_Ordered__c, originalProduct.Quantity_Ordered__c +qtyOrdered);
+        //updatedProduct.Quantity_Ordered__c=originalProduct.Quantity_Ordered__c + qtyOrdered;
+        Integer sumQ=Integer.valueOf(originalProduct.Quantity_Ordered__c) + qtyOrdered;
+        System.assertEquals(updatedProduct.Quantity_Ordered__c, sumQ);
+    }
+	
+	
 }
