@@ -12,6 +12,6 @@ public class Constants {
     public static final String ACTIVATED_ORDER_STATUS = 'Activated';
     public static final String INVENTORY_ANNOUNCEMENTS = 'Inventory Announcements';
     public static final String ERROR_MESSAGE = 'An error has occurred, please take a screenshot with the URL and send it to IT.';
-    public static Id STANDARD_PRICEBOOK_ID = [SELECT Id From Pricebook2 WHERE IsStandard = true limit 1].Id;
+    public static Id STANDARD_PRICEBOOK_ID = '01s0O000002ootP';//[SELECT Id From Pricebook2 WHERE IsStandard = true limit 1].Id;
     
 }
