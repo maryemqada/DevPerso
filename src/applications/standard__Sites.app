@@ -3,4 +3,5 @@
     <defaultLandingTab>standard-home</defaultLandingTab>
     <tab>standard-Chatter</tab>
     <tab>Energy_Audit__c</tab>
+    <tab>BoatReview__c</tab>
 </CustomApplication>

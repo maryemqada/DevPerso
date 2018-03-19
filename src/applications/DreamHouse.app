@@ -25,6 +25,7 @@
     <tab>Bot_Command__c</tab>
     <tab>standard-File</tab>
     <tab>Energy_Audit__c</tab>
+    <tab>BoatReview__c</tab>
     <uiType>Lightning</uiType>
     <utilityBar>dreamhouseApplicationUtilityBar</utilityBar>
 </CustomApplication>

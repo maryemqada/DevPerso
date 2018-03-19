@@ -174,7 +174,11 @@
     <tab>standard-Opportunity</tab>
     <tab>standard-Lead</tab>
     <tab>Energy_Audit__c</tab>
+    <tab>BoatReview__c</tab>
     <workspaceMappings>
+        <mapping>
+            <tab>BoatReview__c</tab>
+        </mapping>
         <mapping>
             <tab>Energy_Audit__c</tab>
         </mapping>

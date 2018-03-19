@@ -8,4 +8,5 @@
     <tab>standard-CollaborationGroup</tab>
     <tab>standard-File</tab>
     <tab>Energy_Audit__c</tab>
+    <tab>BoatReview__c</tab>
 </CustomApplication>

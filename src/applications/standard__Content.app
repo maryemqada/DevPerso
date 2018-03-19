@@ -7,4 +7,5 @@
     <tab>standard-ContentSearch</tab>
     <tab>standard-ContentSubscriptions</tab>
     <tab>Energy_Audit__c</tab>
+    <tab>BoatReview__c</tab>
 </CustomApplication>

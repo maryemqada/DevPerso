@@ -22,5 +22,6 @@
     <tab>standard-Case</tab>
     <tab>standard-Forecasting3</tab>
     <tab>Energy_Audit__c</tab>
+    <tab>BoatReview__c</tab>
     <uiType>Lightning</uiType>
 </CustomApplication>

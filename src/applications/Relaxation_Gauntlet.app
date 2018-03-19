@@ -11,4 +11,5 @@
     <tab>standard-Pricebook2</tab>
     <tab>Fulfillment__c</tab>
     <tab>Energy_Audit__c</tab>
+    <tab>BoatReview__c</tab>
 </CustomApplication>

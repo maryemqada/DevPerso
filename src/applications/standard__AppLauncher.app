@@ -4,4 +4,5 @@
     <formFactors>Large</formFactors>
     <tab>standard-AppLauncher</tab>
     <tab>Energy_Audit__c</tab>
+    <tab>BoatReview__c</tab>
 </CustomApplication>

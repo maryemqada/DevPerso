@@ -10,6 +10,7 @@
     <tab>standard-Dashboard</tab>
     <tab>standard-home</tab>
     <tab>Energy_Audit__c</tab>
+    <tab>BoatReview__c</tab>
     <uiType>Lightning</uiType>
     <utilityBar>LightningService_UtilityBar</utilityBar>
 </CustomApplication>

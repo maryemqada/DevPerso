@@ -15,6 +15,32 @@
         <componentInstances>
             <componentName>BoatDetails</componentName>
         </componentInstances>
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>height</name>
+                <value>200px</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>width</name>
+                <value>100%</value>
+            </componentInstanceProperties>
+            <componentName>Map</componentName>
+        </componentInstances>
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>latField</name>
+                <value>Location__Latitude__s</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>longField</name>
+                <value>Location__Longitude__s</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>titleField</name>
+                <value>Name</value>
+            </componentInstanceProperties>
+            <componentName>MapCard</componentName>
+        </componentInstances>
         <name>region3</name>
         <type>Region</type>
     </flexiPageRegions>
