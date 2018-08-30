@@ -165,6 +165,45 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
+        <fullName>Language_Preference__c</fullName>
+        <externalId>false</externalId>
+        <label>Language Preference</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>English</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Spanish</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>French</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>German</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Japanese</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Canadian</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
         <fullName>Match_Billing_Address__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>

@@ -202,6 +202,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>Constants</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ContactsTodayController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -387,10 +391,6 @@
     </classAccesses>
     <classAccesses>
         <apexClass>OrderTests</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>PackageTests</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -601,6 +601,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.Jigsaw</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Language_Preference__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1667,6 +1672,11 @@
         <editable>false</editable>
         <field>Idea.Status</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Inventory_Setting__mdt.Low_Quantity_Alert__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -2848,6 +2858,9 @@
         <layout>Idea-Idea Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Inventory_Setting__mdt-Inventory Setting Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>JobTracker-Job Tracker Layout - Winter %2716</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -2864,6 +2877,10 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Opportunity-Opportunity Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Opportunity-Utility Opportunity Page</layout>
+        <recordType>Opportunity.Utility_Opportunity</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>OpportunityLineItem-Opportunity Product Layout</layout>
@@ -3054,6 +3071,11 @@
         <default>false</default>
         <recordType>Idea.InternalIdeasIdeaRecordType</recordType>
         <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>true</default>
+        <recordType>Opportunity.Utility_Opportunity</recordType>
+        <visible>true</visible>
     </recordTypeVisibilities>
     <tabVisibilities>
         <tab>BoatReview__c</tab>

@@ -185,6 +185,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>Constants</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ContactsTodayController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -370,10 +374,6 @@
     </classAccesses>
     <classAccesses>
         <apexClass>OrderTests</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>PackageTests</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -583,6 +583,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.Jigsaw</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Language_Preference__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2751,6 +2756,10 @@
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <recordType>Idea.InternalIdeasIdeaRecordType</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <recordType>Opportunity.Utility_Opportunity</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
     <tabSettings>
